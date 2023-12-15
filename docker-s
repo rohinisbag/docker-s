@@ -1,0 +1,11 @@
+manger -> docker.sh
+nano Dockerfile
+nano index.html
+docker login 
+docker swarm init
+docker build -t rohinisbag/new-img .
+docker images
+docker push rohinisbag/new-img
+docker service create --name con --replicas 3 -d -p 80:80 rohinisbag/new-img
+docker service ls
+docker node ls
